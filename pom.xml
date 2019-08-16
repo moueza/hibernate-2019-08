@@ -10,6 +10,11 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<jdk.version>1.8</jdk.version>
+
+
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<servlet-api-version>3.1.0</servlet-api-version>
 		<springVersionMoi>4.3.8.RELEASE</springVersionMoi>
@@ -25,6 +30,16 @@
 
 		<!-- <hibernateVersionMoi>5.0.0.Final</hibernateVersionMoi> -->
 
+		<junit5.version>5.1.1</junit5.version>
+		<junitplatform.version>1.0.0</junitplatform.version>
+
+
+
+		<java.version>1.8</java.version>
+		<junit.version>4.12</junit.version>
+		<junit.jupiter.version>5.1.1</junit.jupiter.version>
+		<junit.vintage.version>5.1.1</junit.vintage.version>
+		<junit.platform.version>1.1.1</junit.platform.version>
 
 
 	</properties>
@@ -425,6 +440,56 @@
 		<!-- <artifactId>junit-platform-launcher</artifactId> -->
 		<!-- <version>${junitplatform.version}</version> -->
 		<!-- </dependency> -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>${junit.jupiter.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>5.1.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.vintage</groupId>
+			<artifactId>junit-vintage-engine</artifactId>
+			<version>${junit.vintage.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.junit.platform/junit-platform-surefire-provider -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.junit.platform</groupId> -->
+		<!-- <artifactId>junit-platform-surefire-provider</artifactId> -->
+		<!-- <version>${junitplatform.version}</version> -->
+		<!-- <scope>test</scope> -->
+		<!-- </dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/org.junit.platform/junit-platform-engine -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.junit.platform</groupId> -->
+		<!-- <artifactId>junit-platform-engine</artifactId> -->
+		<!-- <version>${junitplatform.version}</version> -->
+		<!-- </dependency> -->
+
+		<!-- https://stackoverflow.com/questions/46717693/eclipse-no-tests-found-using-junit-5-caused-by-noclassdeffounderror/46723851 
+			main solution and following:launcher -->
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-launcher</artifactId>
+			<version>${junitplatform.version}</version>
+		</dependency>
+
+
 
 		<!-- https://mvnrepository.com/artifact/com.mchange/c3p0 -->
 		<dependency>
