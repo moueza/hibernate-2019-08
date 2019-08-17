@@ -25,20 +25,20 @@ public class Main {
 		// configuration.addAnnotatedClass(Employee2.class);
 		try {
 			// factory = new Configuration().configure().buildSessionFactory();
-			//factory = buildSessionFactory();
+			// factory = buildSessionFactory();
 
 		} catch (Throwable ex) {
 			System.err.println("Failed to create sessionFactory object." + ex);
 			throw new ExceptionInInitializerError(ex);
 		}
 		System.out.println("lbl065");
-Main ME = new Main();
+		Main ME = new Main();
 
 		/* Add few employee records in database */
 		Integer empID1 = ME.addEmployee("Zara", "Ali", 1000);
-	//	Integer empID2 = ME.addEmployee("Daisy", "Das", 5000);
-		//Integer empID3 = ME.addEmployee("John", "Paul", 10000);
-	//	System.out.println("lbl080");
+		// Integer empID2 = ME.addEmployee("Daisy", "Das", 5000);
+		// Integer empID3 = ME.addEmployee("John", "Paul", 10000);
+		// System.out.println("lbl080");
 
 		// List down all the employees
 		// ME.listEmployees();
@@ -86,9 +86,9 @@ Main ME = new Main();
 			List employees = session.createQuery("FROM Employee2 e").list();
 			for (Iterator iterator = employees.iterator(); iterator.hasNext();) {
 				Employee2 employee2 = (Employee2) iterator.next();
-				System.out.print("First Name: " + employee2.getFirstName());
-				System.out.print("  Last Name: " + employee2.getLastName());
-		//		System.out.println("  Salary: " + employee2.getSalary());
+				System.out.print("First Name: " + employee2.getFn());
+				System.out.print("  Last Name: " + employee2.getLn());
+				// System.out.println(" Salary: " + employee2.getSalary());
 			}
 			tx.commit();
 		} catch (HibernateException e) {
@@ -108,7 +108,7 @@ Main ME = new Main();
 		try {
 			tx = session.beginTransaction();
 			Employee2 employee2 = (Employee2) session.get(Employee2.class, EmployeeID);
-		//	employee2.setSalary(salary);
+			// employee2.setSalary(salary);
 			session.update(employee2);
 			tx.commit();
 		} catch (HibernateException e) {
