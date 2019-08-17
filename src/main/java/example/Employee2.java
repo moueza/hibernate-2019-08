@@ -1,11 +1,30 @@
 package example;
 
-/** https://www.tutorialspoint.com/hibernate/hibernate_examples.htm */
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
+
+/** https://www.tutorialspoint.com/hibernate/hibernate_examples.htm*/
+@Entity
+@Table(name="employee2")
 public class Employee2 {
-	private int id;
+
+ 
+	private Long id;
+
+	// private int id;
+	
 	private String firstName;
+
+
 	private String lastName;
-	private int salary;
+
+	//private int salary;
 
 	public Employee2() {
 	}
@@ -13,17 +32,23 @@ public class Employee2 {
 	public Employee2(String fname, String lname, int salary) {
 		this.firstName = fname;
 		this.lastName = lname;
-		this.salary = salary;
+		//this.salary = salary;
 	}
 
-	public int getId() {
+	
+	@Id
+	@GeneratedValue(generator="increment")
+	@GenericGenerator(name="increment", strategy = "increment")
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
+
+	@Column(name = "fn")
 	public String getFirstName() {
 		return firstName;
 	}
@@ -32,6 +57,7 @@ public class Employee2 {
 		this.firstName = first_name;
 	}
 
+	@Column(name = "ln")
 	public String getLastName() {
 		return lastName;
 	}
@@ -40,11 +66,5 @@ public class Employee2 {
 		this.lastName = last_name;
 	}
 
-	public int getSalary() {
-		return salary;
-	}
-
-	public void setSalary(int salary) {
-		this.salary = salary;
-	}
+ 
 }
