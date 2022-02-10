@@ -24,7 +24,7 @@
 		<mysql.connector.version>5.1.38</mysql.connector.version>
 		<logback.version>1.1.2</logback.version>
 		<slf4j.version>1.7.6</slf4j.version>
-		<hibernateVersionMoi>5.2.18.Final</hibernateVersionMoi>
+		<hibernateVersionMoi>5.4.24.Final</hibernateVersionMoi>
 		<dbcp.version>1.4</dbcp.version>
 		<!-- <hibernateVersionMoi>5.2.10.Final</hibernateVersionMoi> -->
 
